@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Theme: light by default, dark when <html> has the "dark" class (see theme-toggle.tsx). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --paper: #f6f7f9; /* page background */
+  --ink: #161a22; /* text, borders and overlays (used with opacity, e.g. text-ink/60) */
+  color-scheme: light;
+}
+
+.dark {
+  --paper: #0b0d12;
+  --ink: #e6e8ee;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}

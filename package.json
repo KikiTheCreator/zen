@@ -1,0 +1,17 @@
+{
+  "name": "zen",
+  "private": true,
+  "packageManager": "pnpm@11.8.0",
+  "scripts": {
+    "dev": "pnpm --filter @zen/web dev",
+    "build": "pnpm --filter @zen/web build",
+    "test": "pnpm --filter @zen/core test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "format": "prettier --write apps/web/src packages/core/src",
+    "start:lan": "pnpm --filter @zen/web build && pnpm --filter @zen/web start:lan"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.10"
+  }
+}
